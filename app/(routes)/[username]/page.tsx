@@ -1,3 +1,4 @@
+import { ServerNumberFlow } from "@/app/components/server-number-flow";
 import { getDuolingo } from "@/app/helpers/get-duolingo";
 
 export default async function UsernamePage({
@@ -18,7 +19,8 @@ export default async function UsernamePage({
       <div className="flex flex-col items-center gap-2">
         <strong className="text-4xl">Duolingo Worth</strong>
         <span>
-          {username} has {data.streak} consecutive days
+          {username} has <ServerNumberFlow value={data?.streak} /> consecutive
+          days
         </span>
       </div>
     </div>
