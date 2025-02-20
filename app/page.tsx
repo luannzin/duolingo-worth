@@ -1,5 +1,5 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+// import { Button } from "@/components/ui/button";
+// import { Input } from "@/components/ui/input";
 
 export default function Home() {
 	return (
@@ -9,10 +9,10 @@ export default function Home() {
 				<span className="text-zinc-400">
 					know your duolingo account worth in seconds
 				</span>
-				<div className="flex flex-col items-center gap-2 w-full">
+				{/* <div className="flex flex-col items-center gap-2 w-full">
 					<Input type="text" placeholder="Enter your duolingo username" />
 					<Button type="button">let me know</Button>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);
