@@ -34,7 +34,7 @@ export default async function UsernamePage({
             }}
             className="text-7xl font-bold"
           />
-          <span className="text-zinc-400">
+          <span className="text-zinc-400 text-center">
             this is the estimated worth of {username}&apos;s duolingo account
           </span>
         </div>
