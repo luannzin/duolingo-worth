@@ -1,5 +1,7 @@
 import { ServerNumberFlow } from "@/app/components/server-number-flow";
 import { getDuolingo } from "@/app/helpers/get-duolingo";
+import { getWorth } from "@/app/helpers/get-worth";
+import { redirect } from "next/navigation";
 
 export default async function UsernamePage({
   params,
@@ -12,16 +14,38 @@ export default async function UsernamePage({
     username,
   });
 
-  if (!data) return <div>User not found</div>;
+  if (!data) return redirect("/");
 
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="flex flex-col items-center gap-2">
-        <strong className="text-4xl">Duolingo Worth</strong>
-        <span>
+        <ServerNumberFlow
+          value={getWorth(data)}
+          format={{
+            style: "currency",
+            currency: "BRL",
+          }}
+          className="text-7xl font-bold"
+        />
+        <span className="text-zinc-400">
+          this is the estimated worth of {username}&apos;s duolingo account
+        </span>
+        {/* <div className="flex flex-col items-center">
+          <img
+            src={
+              "https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/main/Animals%20and%20Nature/Fire.webp"
+            }
+            alt="Fire"
+            width={64}
+          />
+          <strong>
+            <ServerNumberFlow value={data?.streak} />
+          </strong>
+        </div> */}
+        {/* <span>
           {username} has <ServerNumberFlow value={data?.streak} /> consecutive
           days
-        </span>
+        </span> */}
       </div>
     </div>
   );

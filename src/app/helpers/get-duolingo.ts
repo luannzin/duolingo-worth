@@ -1,10 +1,7 @@
+import type { User } from "@/app/types/user";
+
 type getDuolingoProps = {
   username: string;
-};
-
-type User = {
-  streak: number;
-  totalXp: number;
 };
 
 const getDuolingo: ({
