@@ -22,8 +22,10 @@ export default function Home() {
   });
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    setIsLoading(true);
     e.preventDefault();
     router.push(`/${username}`);
+    setIsLoading(false);
   };
 
   const searchUsername = async (username: string) => {

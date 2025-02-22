@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="pt-BR" className={`dark ${dinRound.className}`}>
       <body className="flex flex-col items-center overflow-x-hidden px-4 bg-zinc-950 text-zinc-50">
         <main className="max-w-[1000px] w-full min-h-screen">
-          <NextTopLoader showSpinner={false} color="#8b5cf6" />
+          <NextTopLoader showSpinner={false} color="#58cc02" />
           {children}
         </main>
       </body>
