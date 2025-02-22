@@ -2,7 +2,16 @@ type getDuolingoProps = {
   username: string;
 };
 
-const getDuolingo = async ({ username }: getDuolingoProps) => {
+type User = {
+  streak: number;
+  totalXp: number;
+};
+
+const getDuolingo: ({
+  username,
+}: getDuolingoProps) => Promise<User | null> = async ({
+  username,
+}: getDuolingoProps) => {
   try {
     const response = await fetch(
       `https://www.duolingo.com/2017-06-30/users?username=${username}`
